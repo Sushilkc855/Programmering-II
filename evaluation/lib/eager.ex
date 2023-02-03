@@ -64,6 +64,20 @@ defmodule Eager do
     Eager.eval_seq(seq, Env.new())
  end
 
+ def lastTest do
+  seq = [{:match, {:var, :x},
+    {:cons, {:atm, :a}, {:cons, {:atm, :b}, {:atm, []}}}},
+    {:match, {:var, :y},
+    {:cons, {:atm, :c}, {:cons, {:atm, :d}, {:atm, []}}}},
+    {:apply, {:fun, :append}, [{:var, :x}, {:var, :y}]}
+  ]
+  Eager.eval_seq(seq, Env.new())
+
+
+ end
+
+
+
 
   def eval_expr({:atm, id}, _) do
     {:ok, id}
@@ -140,7 +154,6 @@ defmodule Eager do
     end
   end
 
-  end
 
 
 
