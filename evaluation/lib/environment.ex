@@ -1,4 +1,5 @@
 defmodule Upp1 do
+   """
 
    @type literal() :: {:num, number()}| {:var, atom()} |{:q, number(), number()}
 
@@ -93,7 +94,7 @@ defmodule Upp1 do
    end
 #if its is a number then we just return it. But if it is a variable then we get the number assoieted with the variable.
 
-
+"""
 
 
 
