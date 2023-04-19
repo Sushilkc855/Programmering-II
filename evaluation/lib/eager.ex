@@ -124,6 +124,7 @@ defmodule Eager do
         {:ok, {:closure, par, seq, closure}}
     end
   end
+
   def eval_expr({:apply, expr, args}, env) do
     case  eval_expr(expr, env) do
       :error ->
